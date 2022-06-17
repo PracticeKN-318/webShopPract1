@@ -31,10 +31,8 @@ namespace webShop.Data
             }
         }
 
-        public static void Initial(IApplicationBuilder app)
+        public static void Initial(AppDBContent content)
         {
-            AppDBContent content = app.ApplicationServices.GetRequiredService<AppDBContent>();
-
             if (!content.Category.Any())
                 content.Category.AddRange(Categories.Select(c => c.Value));
 
@@ -99,6 +97,7 @@ namespace webShop.Data
                     );
             }
 
+            content.SaveChanges();
         }
     }
 }
