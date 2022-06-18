@@ -30,9 +30,9 @@ namespace webShop.Controllers
 
             shopCart.listShopItems = shopCart.GetShopItems();
 
-            if(shopCart.listShopItems.Count == 0)
+            if (shopCart.listShopItems.Count == 0)
             {
-                ModelState.AddModelError("","У вас повинні бути товари");
+                ModelState.AddModelError("", "У вас повинні бути товари");
             }
 
             if (ModelState.IsValid)
@@ -47,7 +47,7 @@ namespace webShop.Controllers
         public IActionResult Complete()
         {
             ViewBag.Message = "Замовлення успішно оброблено";
-            return View(); 
+            return View();
         }
     }
 }
