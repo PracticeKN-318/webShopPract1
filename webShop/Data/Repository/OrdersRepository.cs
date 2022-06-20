@@ -25,7 +25,7 @@ namespace webShop.Data.Repository
 
             var items = shopCart.listShopItems;
 
-            foreach(var el in items)
+            foreach (var el in items)
             {
                 var orderDetailI = new OrderDetail()
                 {
