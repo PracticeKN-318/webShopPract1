@@ -1,12 +1,12 @@
-п»ї@model HomeViewModel
+@model HomeViewModel
 
 
-    <h1>РќР°Р№РєСЂР°С‰С– Р°РІС‚РѕРјРѕР±С–Р»С–</h1>
-    <div class="row mt-5 mb-2">
-        @{
-            foreach (Car car in Model.favCars)
-            {
-                @Html.Partial("AllCars", car)
-            }
+<h1>Найкращі автомобілі</h1>
+<div class="row mt-5 mb-2">
+    @{
+        foreach (Car car in Model.favCars)
+        {
+            @Html.Partial("AllCars", car)
         }
-    </div>
+    }
+</div>

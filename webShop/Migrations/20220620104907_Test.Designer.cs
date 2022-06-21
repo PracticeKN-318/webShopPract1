@@ -3,19 +3,21 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using webShop.Data;
 
 namespace webShop.Migrations
 {
     [DbContext(typeof(AppDBContent))]
-    partial class AppDBContentModelSnapshot : ModelSnapshot
+    [Migration("20220620104907_Test")]
+    partial class Test
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "2.2.0-rtm-35687")
+                .HasAnnotation("ProductVersion", "2.2.6-servicing-10079")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -71,19 +73,25 @@ namespace webShop.Migrations
 
                     b.Property<string>("adress")
                         .IsRequired()
-                        .HasMaxLength(10);
+                        .HasMaxLength(30);
 
                     b.Property<string>("email")
                         .IsRequired()
                         .HasMaxLength(25);
 
-                    b.Property<string>("name");
+                    b.Property<string>("name")
+                        .IsRequired()
+                        .HasMaxLength(15);
 
                     b.Property<DateTime>("orderTime");
 
-                    b.Property<string>("phone");
+                    b.Property<string>("phone")
+                        .IsRequired()
+                        .HasMaxLength(10);
 
-                    b.Property<string>("surname");
+                    b.Property<string>("surname")
+                        .IsRequired()
+                        .HasMaxLength(20);
 
                     b.HasKey("id");
 

@@ -11,10 +11,11 @@ namespace webShop.Data
     public class DBObjects
     {
         private static Dictionary<string, Category> category;
-        public static Dictionary<string, Category> Categories {
+        public static Dictionary<string, Category> Categories
+        {
             get
             {
-                if(category == null)
+                if (category == null)
                 {
                     var list = new Category[]
                     {
