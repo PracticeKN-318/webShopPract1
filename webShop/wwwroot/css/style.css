@@ -1,4 +1,9 @@
 ﻿body {
     background: #fcfcfc;
 }
-
+.container-fluid {
+   width: 90%;
+}
+.navbar-brand{
+    width:10%;
+}

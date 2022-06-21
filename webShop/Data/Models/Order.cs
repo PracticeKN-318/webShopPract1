@@ -34,9 +34,9 @@ namespace webShop.Data.Models
         public string phone { get; set; }
 
         [Display(Name = "email")]
-        [StringLength(20)]
+        [StringLength(25)]
         [DataType(DataType.EmailAddress)]
-        [Required(ErrorMessage = "Довжинна email менше 20 символів")]
+        [Required(ErrorMessage = "Довжинна email менше 26 символів")]
         public string email { get; set; }
 
         [BindNever]
