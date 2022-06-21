@@ -13,30 +13,30 @@ namespace webShop.Data.Models
         public int id { get; set; }
 
         [Display(Name = "Введіть ім'я")]
-        [StringLength(10)]
-        [Required(ErrorMessage = "Довжинна імені менше 11 символів")]
+        [StringLength(20)]
+        [Required(ErrorMessage = "Довжинна імені менше 20 символів")]
         public string name { get; set; }
 
         [Display(Name = "Введіть прізвище")]
-        [StringLength(5)]
-        [Required(ErrorMessage = "Довжинна прізвища не менше 5 символів")]
+        [StringLength(20)]
+        [Required(ErrorMessage = "Довжинна прізвища не менше 20 символів")]
         public string surname { get; set; }
 
         [Display(Name = "Адреса")]
-        [StringLength(10)]
-        [Required(ErrorMessage = "Довжинна адреси не менше 10 символів")]
+        [StringLength(20)]
+        [Required(ErrorMessage = "Довжинна адреси не менше 20 символів")]
         public string adress { get; set; }
 
         [Display(Name = "Номер телефону")]
-        [StringLength(15)]
+        [StringLength(20)]
         [DataType(DataType.PhoneNumber)]
-        [Required(ErrorMessage = "Довжинна номера телефону не менше 10 символів")]
+        [Required(ErrorMessage = "Довжинна номера телефону не менше 20 символів")]
         public string phone { get; set; }
 
         [Display(Name = "email")]
         [StringLength(25)]
         [DataType(DataType.EmailAddress)]
-        [Required(ErrorMessage = "Довжинна email не менше 10 символів")]
+        [Required(ErrorMessage = "Довжинна email не менше 25 символів")]
         public string email { get; set; }
 
         [BindNever]

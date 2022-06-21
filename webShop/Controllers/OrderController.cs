@@ -46,7 +46,7 @@ namespace webShop.Controllers
 
         public IActionResult Complete()
         {
-            ViewBag.Message = "Замовлення успішно оброблено";
+            ViewBag.Message = "Замовлення успішно оброблено. Найближчим часом з вами зв'яжеться менеджер автомагазину";
             return View(); 
         }
     }
