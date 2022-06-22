@@ -32,7 +32,7 @@ namespace webShop.Data
             }
         }
 
-        public static void Initial(AppDBContent content)
+        public static void Initial(AppDBContent content) //підключення бази даних
         {
             if (!content.Category.Any())
                 content.Category.AddRange(Categories.Select(c => c.Value));
