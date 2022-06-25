@@ -10,8 +10,8 @@ namespace webShop.Data.interfaces
 
         IEnumerable<Car> Cars { get; }
         IEnumerable<Car> getFavCars { get; }
+        IEnumerable<Car> getSearchCar(string searchCar);
         Car getObjectCar(int carId);
-
 
     }
 }

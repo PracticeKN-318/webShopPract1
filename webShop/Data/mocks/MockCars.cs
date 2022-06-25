@@ -76,5 +76,10 @@ namespace webShop.Data.mocks
         {
             throw new NotImplementedException();
         }
+
+        public IEnumerable<Car> getSearchCar(string searchCar)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

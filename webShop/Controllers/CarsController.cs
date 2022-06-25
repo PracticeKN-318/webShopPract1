@@ -58,6 +58,30 @@ namespace webShop.Controllers
             return View(carObj);
         }
 
+        //[Route("Cars/SearchCar")]
+        [Route("Cars/SearchCar/{Search}")]
+        public ViewResult SearchCar(string Search)
+        {
+            IEnumerable<Car> cars = null;
+            string currCategory = "";
+            if (!string.IsNullOrEmpty(Search))
+            {
+                cars = _allCars.Cars.Where(i => i.name.Equals(Search));
+                currCategory = "Результат пошуку";
+            }
+            if(cars == null)
+            {
+                cars = _allCars.Cars.OrderBy(i => i.id);
+                currCategory = "Атомобілі з назвою - " + Search + " відсутні!";
+            }
 
+            var searchCars = new SearchCarViewModel
+            {
+                searchCars = cars
+            };
+
+            ViewBag.Title = "Результат пошуку автомобілів";
+            return View(searchCars);
+        }
     }
 }

@@ -1,0 +1,11 @@
+﻿@model SearchCarViewModel
+
+<h1>Пошук автомобіля по назві моделі</h1>
+<div class="row mt-5 mb-2">
+    @{
+        foreach (Car car in Model.searchCars)
+        {
+            @Html.Partial("AllCars", car)
+        }
+    }
+</div>
