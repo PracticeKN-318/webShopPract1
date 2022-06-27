@@ -3,11 +3,16 @@
     @foreach (var el in Model.shopCart.listShopItems)
     {
         <div class="alert alert-warning mt-3">
+
             <b>Автомобіль</b>@el.car.name<br />
             <b>Ціна:</b> @el.car.price.ToString("c")
+            <form asp-action="DeleteFromCart" asp-route-id="@el.id" method="post" class="form-horizontal">
+                <input class="btn btn-danger" type="submit" value="Видалити" />
+            </form>
         </div>
     }
     <hr />
 
-    <a class="btn btn-danger mb-5" asp-controller="Order" asp-action="Checkout">Оплатити</a>
+    <a class="btn btn-success mb-5" asp-controller="Order" asp-action="Checkout">Оплатити</a>
+    <a class="btn btn-danger mb-5" asp-action="ClearShopCart" asp-route-id="@Model.shopCart.ShopCartId" >Очистити корзину</a>
 </div>

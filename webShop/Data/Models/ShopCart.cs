@@ -39,6 +39,19 @@ namespace webShop.Data.Models
 
             appDBContent.SaveChanges();
         }
+        public void DeleteFromCart(int id)
+        {
+            var delete = appDBContent.ShopCartItem.Where(c => c.id == id).Include(s => s.car).ToList();
+            appDBContent.ShopCartItem.RemoveRange(delete);
+            appDBContent.SaveChanges();
+        }
+
+        public void ClearShopCart(string id)
+        {
+            var delete = appDBContent.ShopCartItem.Where(c => c.ShopCartId == id).Include(s => s.car).ToList();
+            appDBContent.ShopCartItem.RemoveRange(delete);
+            appDBContent.SaveChanges();
+        }
 
         public List<ShopCartItem> GetShopItems()
         {

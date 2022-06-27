@@ -43,5 +43,15 @@ namespace webShop.Controllers
             }
             return RedirectToAction("Index");
         }
+        public RedirectToActionResult DeleteFromCart(int id)
+        {
+            _shopCart.DeleteFromCart(id);
+            return RedirectToAction("Index");
+        }
+        public RedirectToActionResult ClearShopCart(string id)
+        {
+            _shopCart.ClearShopCart(id);
+            return RedirectToAction("Index");
+        }
     }
 }

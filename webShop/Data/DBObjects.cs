@@ -31,12 +31,72 @@ namespace webShop.Data
                 return category;
             }
         }
-
+        public static void InitialTest(AppDBContent content)
+        {
+            content.AddRange(
+                    new Car
+                    {
+                        name = "Audi Q8",
+                        shortDesc = "Швидкий і зручний",
+                        longDesc = "",
+                        img = "/img/audi-q8-by-abt.jpg",
+                        price = 55000,
+                        isFavourite = true,
+                        available = false,
+                        Category = Categories["Класичні автомобілі"]
+                    },
+                     new Car
+                     {
+                         name = "Toyota RAV4",
+                         shortDesc = "Зручний і великий",
+                         longDesc = "",
+                         img = "/img/toyota.jpg",
+                         price = 33000,
+                         isFavourite = false,
+                         available = false,
+                         Category = Categories["Класичні автомобілі"]
+                     },
+                     new Car
+                     {
+                         name = "Audi R8",
+                         shortDesc = "Безшумний і швидкий",
+                         longDesc = "Зручний та швидкий спорткар",
+                         img = "/img/2019-audi-r8.jpg",
+                         price = 59000,
+                         isFavourite = true,
+                         available = true,
+                         Category = Categories["Класичні автомобілі"]
+                     },
+                     new Car
+                     {
+                         name = "Hyundai Ioniq",
+                         shortDesc = "Безшумний і економний",
+                         longDesc = "Зручний автомобіль для тихої їзди",
+                         img = "/img/hyund.jpg",
+                         price = 30000,
+                         isFavourite = false,
+                         available = true,
+                         Category = Categories["Електромобілі"]
+                     },
+                      new Car
+                      {
+                          name = "VW E-Golf",
+                          shortDesc = "Безшумний і економний",
+                          longDesc = "Зручний автомобіль для тихої їзди",
+                          img = "/img/golf.jpg",
+                          price = 30000,
+                          isFavourite = false,
+                          available = true,
+                          Category = Categories["Електромобілі"]
+                      }
+                    );
+            content.SaveChanges();
+        }
         public static void Initial(AppDBContent content) //підключення бази даних
         {
             if (!content.Category.Any())
                 content.Category.AddRange(Categories.Select(c => c.Value));
-
+            //InitialTest(content);
             if (!content.Car.Any())
             {
                 content.AddRange(
