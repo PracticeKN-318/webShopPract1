@@ -12,7 +12,6 @@ namespace webShop.Controllers
     {
         private readonly IAllCars _carRep;
 
-
         public HomeController(IAllCars carREp)
         {
             this._carRep = carREp;

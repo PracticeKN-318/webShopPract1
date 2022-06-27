@@ -58,7 +58,7 @@ namespace webShop.Controllers
             return View(carObj);
         }
 
-        //[Route("Cars/SearchCar")]
+        [Route("Cars/SearchCar")]
         [Route("Cars/SearchCar/{Search}")]
         public ViewResult SearchCar(string Search)
         {
@@ -77,7 +77,8 @@ namespace webShop.Controllers
 
             var searchCars = new SearchCarViewModel
             {
-                searchCars = cars
+                searchCars = cars,
+                searchHead = currCategory
             };
 
             ViewBag.Title = "Результат пошуку автомобілів";
