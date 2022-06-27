@@ -33,10 +33,10 @@ namespace webShop.Data.Models
         [Required(ErrorMessage = "Довжинна номера телефону не менше 20 символів")]
         public string phone { get; set; }
 
-        [Display(Name = "email")]
+        [Display(Name = "Електронна пошта")]
         [StringLength(25)]
         [DataType(DataType.EmailAddress)]
-        [Required(ErrorMessage = "Довжинна email не менше 25 символів")]
+        [Required(ErrorMessage = "Довжинна електронної пошти не менше 25 символів")]
         public string email { get; set; }
 
         [BindNever]
