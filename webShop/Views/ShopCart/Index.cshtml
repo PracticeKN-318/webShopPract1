@@ -7,7 +7,7 @@
             <b>Автомобіль</b>@el.car.name<br />
             <b>Ціна:</b> @el.car.price.ToString("c")
             <form asp-action="DeleteFromCart" asp-route-id="@el.id" method="post" class="form-horizontal">
-                <input class="btn btn-danger" type="submit" value="Видалити" />
+                <input class="btn btn-danger mt-3" type="submit" value="Видалити" />
             </form>
         </div>
     }
