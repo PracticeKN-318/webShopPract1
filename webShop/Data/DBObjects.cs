@@ -96,7 +96,7 @@ namespace webShop.Data
         {
             if (!content.Category.Any())
                 content.Category.AddRange(Categories.Select(c => c.Value));
-            InitialTest(content);
+            //InitialTest(content);
             if (!content.Car.Any())
             {
                 content.AddRange(
